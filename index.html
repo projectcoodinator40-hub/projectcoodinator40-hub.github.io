@@ -65,6 +65,9 @@ button {
   <th>Skilled</th>
   <th>Helper</th>
   <th>Coolie</th>
+  <th>Particular</th>
+  <th>Quantity</th>
+  <th>Unit</th>
 </tr>
 </thead>
 
@@ -81,6 +84,9 @@ for (let i = 1; i <= 20; i++) {
     <td><input type="number" min="0"></td>
     <td><input type="number" min="0"></td>
     <td><input type="number" min="0"></td>
+    <td><input placeholder="Particular"></td>
+    <td><input placeholder="Quantity"></td>
+    <td><input placeholder="Unit"></td>
   </tr>
   `);
 }
@@ -112,7 +118,9 @@ Work: ${inputs[3].value}
 Skilled: ${inputs[4].value}
 Helper: ${inputs[5].value}
 Coolie: ${inputs[6].value}
-
+Particular: ${inputs[7].value}
+Quantity: ${inputs[8].value}
+Unit: ${inputes[9].value}
 `;
     }
   });
