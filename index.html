@@ -22,7 +22,7 @@ table {
 th, td {
   border: 1px solid #aaa;
   padding: 3px;
-  font-size: 12px;
+  font-size: 11px; /* Reduced font size for better fit */
 }
 th {
   background: #e6e6e6;
@@ -32,8 +32,9 @@ input, textarea {
   width: 100%;
   border: none;
   outline: none;
-  font-size: 12px;
+  font-size: 11px;
   background: transparent;
+  box-sizing: border-box;
 }
 textarea {
   resize: none;
@@ -57,17 +58,19 @@ button {
 <table id="dprTable">
 <thead>
 <tr>
-  <th>#</th>
+  <th>S. No.</th>
   <th>Date</th>
-  <th>Block</th>
-  <th>Contractor</th>
+  <th>Block Name</th>
+  <th>Contractor Name</th>
   <th>Work Done</th>
-  <th>Skilled</th>
-  <th>Helper</th>
-  <th>Coolie</th>
-  <th>Particular</th>
-  <th>Quantity</th>
-  <th>Unit</th>
+  <th>Skilled Labour count</th>
+  <th>Unskilled labour count</th>
+  <th>Material Received</th>
+  <th>quantity</th>
+  <th>unit</th>
+  <th>Material outgoing</th>
+  <th>Quantity outgoing</th>
+  <th>Unit_outgoing</th>
 </tr>
 </thead>
 
@@ -78,15 +81,17 @@ for (let i = 1; i <= 20; i++) {
   <tr>
     <td>${i}</td>
     <td><input type="date"></td>
-    <td><input placeholder="Write block"></td>
-    <td><input></td>
-    <td><textarea rows="2"></textarea></td>
-    <td><input type="number" min="0"></td>
-    <td><input type="number" min="0"></td>
-    <td><input type="number" min="0"></td>
-    <td><input placeholder="Particular"></td>
-    <td><input placeholder="Quantity"></td>
+    <td><input placeholder="Block Name"></td>
+    <td><input placeholder="Contractor Name"></td>
+    <td><textarea rows="2" placeholder="Work Done"></textarea></td>
+    <td><input type="number" min="0" placeholder="Skilled"></td>
+    <td><input type="number" min="0" placeholder="Unskilled"></td>
+    <td><input placeholder="Material Received"></td>
+    <td><input placeholder="Quantity" type="number" min="0"></td>
     <td><input placeholder="Unit"></td>
+    <td><input placeholder="Material outgoing"></td>
+    <td><input placeholder="Quantity outgoing" type="number" min="0"></td>
+    <td><input placeholder="Unit outgoing"></td>
   </tr>
   `);
 }
@@ -103,6 +108,7 @@ function sendWhatsApp() {
 
   rows.forEach((row, i) => {
     const inputs = row.querySelectorAll("input, textarea");
+    // Check if any field in the first 4 columns has data
     if (
       inputs[0].value ||
       inputs[1].value ||
@@ -112,15 +118,17 @@ function sendWhatsApp() {
       msg +=
 `Row ${i + 1}
 Date: ${inputs[0].value}
-Block: ${inputs[1].value}
-Contractor: ${inputs[2].value}
-Work: ${inputs[3].value}
-Skilled: ${inputs[4].value}
-Helper: ${inputs[5].value}
-Coolie: ${inputs[6].value}
-Particular: ${inputs[7].value}
-Quantity: ${inputs[8].value}
-Unit: ${inputes[9].value}
+Block Name: ${inputs[1].value}
+Contractor Name: ${inputs[2].value}
+Work Done: ${inputs[3].value}
+Skilled Labour count: ${inputs[4].value}
+Unskilled labour count: ${inputs[5].value}
+Material Received: ${inputs[6].value}
+Quantity: ${inputs[7].value}
+Unit: ${inputs[8].value}
+Material outgoing: ${inputs[9].value}
+Quantity outgoing: ${inputs[10].value}
+Unit outgoing: ${inputs[11].value}
 `;
     }
   });
