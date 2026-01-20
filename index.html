@@ -62,7 +62,6 @@ button {
   <th>Date</th>
   <th>Block Name</th>
   <th>Contractor Name</th>
-  <th>Work Done</th>
   <th>Skilled Labour count</th>
   <th>Unskilled labour count</th>
   <th>Material Received</th>
@@ -83,7 +82,6 @@ for (let i = 1; i <= 20; i++) {
     <td><input type="date"></td>
     <td><input placeholder="Block Name"></td>
     <td><input placeholder="Contractor Name"></td>
-    <td><textarea rows="2" placeholder="Work Done"></textarea></td>
     <td><input type="number" min="0" placeholder="Skilled"></td>
     <td><input type="number" min="0" placeholder="Unskilled"></td>
     <td><input placeholder="Material Received"></td>
@@ -120,15 +118,14 @@ function sendWhatsApp() {
 Date: ${inputs[0].value}
 Block Name: ${inputs[1].value}
 Contractor Name: ${inputs[2].value}
-Work Done: ${inputs[3].value}
-Skilled Labour count: ${inputs[4].value}
-Unskilled labour count: ${inputs[5].value}
-Material Received: ${inputs[6].value}
-Quantity: ${inputs[7].value}
-Unit: ${inputs[8].value}
-Material outgoing: ${inputs[9].value}
-Quantity outgoing: ${inputs[10].value}
-Unit outgoing: ${inputs[11].value}
+Skilled Labour count: ${inputs[3].value}
+Unskilled labour count: ${inputs[4].value}
+Material Received: ${inputs[5].value}
+Quantity: ${inputs[6].value}
+Unit: ${inputs[7].value}
+Material outgoing: ${inputs[8].value}
+Quantity outgoing: ${inputs[9].value}
+Unit outgoing: ${inputs[10].value}
 `;
     }
   });
@@ -140,3 +137,4 @@ Unit outgoing: ${inputs[11].value}
 
 </body>
 </html>
+
